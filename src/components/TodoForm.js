@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { formatDiagnostic } from "typescript";
 //rfce
 function TodoForm(props) {
-  const [input, setInput] = useState("");
+  const   [input, setInput] = useState("");
   const handleChange = (e) => {
     setInput(e.target.value);
   };

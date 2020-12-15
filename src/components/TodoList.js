@@ -17,9 +17,9 @@ function TodoList() {
       if (todo.id === id) {
         todo.isComplete = !todo.isComplete;
       }
-      return todo
+      return todo;
     });
-    setTodos(updatedTodos)
+    setTodos(updatedTodos);
   };
 
   return (
