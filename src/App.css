@@ -35,6 +35,7 @@ h1 {
 
 .todo-form {
   margin-bottom: 32px;
+  
 }
 
 .todo-input {
@@ -45,6 +46,7 @@ h1 {
   width: 320px;
   background: transparent;
   color: #fff;
+  /* height: 100px; */
 }
 
 .todo-input::placeholder {
@@ -63,11 +65,11 @@ h1 {
 }
 
 .todo-input.edit {
-  border: 2px solid #149fff;
+  border: 2px solid #012f47;
 }
 
 .todo-button.edit {
-  background: #00a0ee;
+  background: #012f47;
   padding: 16px 22px;
 }
 
