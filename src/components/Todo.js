@@ -27,13 +27,13 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
         {todo.text}
       </div>
       <div className="icons">
-        <BiTrash
-          onClick={() => removeTodo(todo.id)}
-          className="delete-icon"
-        />
         <BiEdit
           onClick={() => setEdit({ id: todo.id, value: todo.text })}
           className="edit-icon"
+        />
+        <BiTrash
+          onClick={() => removeTodo(todo.id)}
+          className="delete-icon"
         />
       </div>
     </div>

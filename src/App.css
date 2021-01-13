@@ -50,12 +50,11 @@ h1 {
 .todo-button {
   padding: 18px;
   border: none;
-  border-radius: 0 4px 4px 0;
+  border-radius: 0 5px 5px 0;
   cursor: pointer;
   outline: none;
   background: #019fe9;
   color: white;
-  text-transform: capitalize;
   width: 91px;
 }
 
@@ -65,7 +64,6 @@ h1 {
 
 .todo-button.edit {
   background: #012f47;
-  padding: 18px;
 }
 
 .todo-container {
@@ -85,11 +83,13 @@ h1 {
   padding: 16px;
   height: 52px;
   border-radius: 5px;
-  width: 410px;
+  width: 412px;
+  
 }
 
 .icons {
   display: flex;
+  flex-direction: row;
   align-items: center;
   font-size: 24px;
   cursor: pointer;
