@@ -2,10 +2,14 @@
   box-sizing: border-box;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  --darkblue: #012f47;
+  --lightblue: #019fe9;
+  --grey: #222228;
+  --darkgrey: #17171a;
 }
 
 body {
-  background: #222228;
+  background: var(--grey);
 }
 
 .todo-app {
@@ -13,16 +17,15 @@ body {
   flex-direction: column;
   width: 450px;
   min-height: 600px;
-  background: #17171a;
+  background: var(--darkgrey);
   text-align: center;
   margin: 100px auto;
   border-radius: 10px;
-  
 }
 
 h1 {
   margin: 30px 0;
-  color: #008dce;
+  color: var(--lightblue);
   font-size: 24px;
 }
 
@@ -38,7 +41,7 @@ h1 {
 .todo-input {
   padding: 16px;
   border-radius: 4px 0 0 4px;
-  border: 2px solid #019fe9;
+  border: 2px solid var(--lightblue);
   outline: none;
   width: 320px;
   background: transparent;
@@ -48,7 +51,6 @@ h1 {
 
 .todo-input::placeholder {
   color: white;
-  
 }
 
 .todo-button {
@@ -57,18 +59,17 @@ h1 {
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   outline: none;
-  background: #019fe9;
+  background: var(--lightblue);
   color: white;
   width: 91px;
 }
 
 .todo-input.edit {
-  border: 2px solid #012f47;
-  
+  border: 2px solid var(--darkblue);
 }
 
 .todo-button.edit {
-  background: #012f47;
+  background: var(--darkblue);
 }
 
 .todo-container {
@@ -83,7 +84,7 @@ h1 {
   align-items: center;
   margin: 4px auto;
   color: white;
-  background: #012f47;
+  background: var(--darkblue);
   padding: 16px;
   height: 52px;
   border-radius: 5px;
