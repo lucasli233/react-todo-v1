@@ -4,15 +4,15 @@
     "Lucida Sans", Arial, sans-serif;
   --darkblue: #012f47;
   --lightblue: #019fe9;
-  --grey: #222228;
+  --lightgrey: #222228;
   --darkgrey: #17171a;
 }
 
 body {
-  background: var(--grey);
+  background: var(--lightgrey);
 }
 
-.todo-app {
+.todoApp {
   display: flex;
   flex-direction: column;
   width: 450px;
@@ -34,11 +34,16 @@ h1 {
   opacity: 0.5;
 }
 
-.todo-form {
+.todoForm {
+  /* margin-bottom: 32px; */
+  margin: 4px auto;
+}
+
+.todoFormEdit {
   margin-bottom: 32px;
 }
 
-.todo-input {
+.todoInput {
   padding: 16px;
   border-radius: 4px 0 0 4px;
   border: 2px solid var(--lightblue);
@@ -49,11 +54,11 @@ h1 {
   font-size: 14px;
 }
 
-.todo-input::placeholder {
+.todoInput::placeholder {
   color: white;
 }
 
-.todo-button {
+.todoButton {
   padding: 18px;
   border: none;
   border-radius: 0 5px 5px 0;
@@ -64,21 +69,21 @@ h1 {
   width: 91px;
 }
 
-.todo-input.edit {
+.todoInput.edit {
   border: 2px solid var(--darkblue);
 }
 
-.todo-button.edit {
+.todoButton.edit {
   background: var(--darkblue);
 }
 
-.todo-container {
+.todoContainer {
   display: flex;
   flex-direction: row;
   position: relative;
 }
 
-.todo-row {
+.todoRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -99,11 +104,11 @@ h1 {
   cursor: pointer;
 }
 
-.delete-icon {
+.deleteIcon {
   margin-right: 5px;
   color: white;
 }
 
-.edit-icon {
+.editIcon {
   color: white;
 }

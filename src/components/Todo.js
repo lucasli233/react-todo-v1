@@ -14,30 +14,32 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
     setEdit({ id: null, value: "" });
   };
 
-  if (edit.id) {
-    return <TodoForm edit={edit} onSubmit={submitUpdate} />;
+  function TodoEdit({ todo }) {
+    return <TodoForm />;
   }
 
-  return todos.map((todo, index) => (
-    <div
-      className={todo.isComplete ? "todo-row complete" : "todo-row"}
-      key={index}
-    >
-      <div key={todo.id} onClick={() => completeTodo(todo.id)}>
-        {todo.text}
+  // rename lol
+  function TodoNotEdit({ todo }) {
+    return (
+      <div
+        className={todo.isComplete ? "todoRow complete" : "todoRow"}
+        key={todo.id}
+      >
+        <div onClick={() => completeTodo(todo.id)}>{todo.text}</div>
+        <div className="icons">
+          <BiEdit
+            onClick={() => setEdit({ id: todo.id, value: todo.text })}
+            className="editIcon"
+          />
+          <BiTrash onClick={() => removeTodo(todo.id)} className="deleteIcon" />
+        </div>
       </div>
-      <div className="icons">
-        <BiEdit
-          onClick={() => setEdit({ id: todo.id, value: todo.text })}
-          className="edit-icon"
-        />
-        <BiTrash
-          onClick={() => removeTodo(todo.id)}
-          className="delete-icon"
-        />
-      </div>
-    </div>
-  ));
+    );
+  }
+
+  return todos.map((todo, index) =>
+    todo.id == edit.id ? <TodoEdit todo={todo} /> : <TodoNotEdit todo={todo} />
+  );
 }
 
 export default Todo;
