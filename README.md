@@ -1,5 +1,7 @@
 https://lucasli233.github.io/react-todo-v1/
 
+![alt text](https://github.com/lucasli233/react-todo-v1/blob/master/public/todolist.png?raw=true)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
