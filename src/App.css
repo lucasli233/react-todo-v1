@@ -6,6 +6,7 @@
   --lightblue: #019fe9;
   --lightgrey: #222228;
   --darkgrey: #17171a;
+  --orange: rgb(255, 123, 0);
 }
 
 body {
@@ -34,16 +35,17 @@ h1 {
   opacity: 0.5;
 }
 
-.todoForm {
-  /* margin-bottom: 32px; */
-  margin: 4px auto;
+.todoToggle {
+  width: 320px;
+  height: 50px;
+  position: absolute;
 }
 
-.todoFormEdit {
+.todoInputBox {
   margin-bottom: 32px;
 }
 
-.todoInput {
+.todoText {
   padding: 16px;
   border-radius: 4px 0 0 4px;
   border: 2px solid var(--lightblue);
@@ -54,7 +56,8 @@ h1 {
   font-size: 14px;
 }
 
-.todoInput::placeholder {
+.todoInput::placeholder,
+.todoEdit::placeholder {
   color: white;
 }
 
@@ -69,12 +72,12 @@ h1 {
   width: 91px;
 }
 
-.todoInput.edit {
-  border: 2px solid var(--darkblue);
+.todoText.edit {
+  border: 2px solid var(--orange);
 }
 
 .todoButton.edit {
-  background: var(--darkblue);
+  background: var(--orange);
 }
 
 .todoContainer {
@@ -87,7 +90,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 4px auto;
+  margin: 6px auto;
   color: white;
   background: var(--darkblue);
   padding: 16px;

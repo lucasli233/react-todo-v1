@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./App.css";
-import TodoForm from "./components/TodoForm";
+import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 
 function App() {

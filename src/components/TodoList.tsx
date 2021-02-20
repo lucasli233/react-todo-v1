@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
 import Todo from "./Todo";
-import TodoForm from "./TodoForm";
+import TodoInput from "./TodoInput";
 
-const LOCAL_STORAGE_KEY = "react-todo-list-todos";
+const LOCAL_STORAGE_KEY: string = "react-todo-list-todos";
+
+export type TodoItem = {
+  id: number;
+  text: string;
+  isComplete: boolean;
+};
 
 function TodoList() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<TodoItem[]>([]);
 
   useEffect(() => {
     // fires when app component mounts to the DOM
-    const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    if (storageTodos) {
-      setTodos(storageTodos);
-    }
+    const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)!);
+    if (storageTodos) setTodos(storageTodos);
   }, []);
 
   useEffect(() => {
@@ -20,7 +24,7 @@ function TodoList() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }, [todos]);
 
-  const addTodo = (todo) => {
+  const addTodo = (todo: TodoItem) => {
     if (!todo.text || /^\s*$/.test(todo.text)) {
       // handles unexpected inputs
       return;
@@ -32,22 +36,23 @@ function TodoList() {
     console.log(todo, ...todos);
   };
 
-  const updateTodo = (todoID, newValue) => {
-    if (!newValue.text || /^\s*$/.test(newValue.text)) {
+  const updateTodo = (newTodo: TodoItem) => {
+    if (!newTodo.text || /^\s*$/.test(newTodo.text)) {
       // handles unexpected inputs
       return;
     }
+    console.log(newTodo);
+    console.log(todos);
+
     setTodos((prev) =>
-      prev.map((item) => (item.id === todoID ? newValue : item))
+      prev.map((todo) => (todo.id === newTodo.id ? newTodo : todo))
     );
   };
 
-  const removeTodo = (id) => {
-    const removeArr = todos.filter((todo) => todo.id !== id);
-    setTodos(removeArr);
-  };
+  const removeTodo = (id: number) =>
+    setTodos(todos.filter((todo) => todo.id !== id));
 
-  const completeTodo = (id) => {
+  const completeTodo = (id: number) => {
     let updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
         todo.isComplete = !todo.isComplete;
@@ -60,7 +65,7 @@ function TodoList() {
   return (
     <div>
       <h1>My Tasks</h1>
-      <TodoForm onSubmit={addTodo} />
+      <TodoInput onSubmit={addTodo} />
       <Todo
         todos={todos}
         completeTodo={completeTodo}
