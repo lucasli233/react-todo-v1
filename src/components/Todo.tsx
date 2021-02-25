@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import TodoInput from "./TodoInput";
 import TodoList, { TodoItem } from "./TodoList";
 import { BiTrash, BiEdit } from "react-icons/bi";
@@ -9,6 +9,7 @@ type Props = {
   removeTodo: (id: number) => void;
   updateTodo: (newTodo: TodoItem) => void;
 };
+
 const Todos: React.FC<Props> = ({
   todos,
   completeTodo,
@@ -38,6 +39,7 @@ const Todos: React.FC<Props> = ({
           // name="text"
           onChange={(e) => setNewText(e.target.value)}
           className="todoText edit"
+          autoFocus
         />
         <button className="todoButton edit">Submit</button>
       </form>
