@@ -36,7 +36,7 @@ const TodoInput: React.FC<any> = (props: any) => {
           onChange={handleChange}
           ref={inputRef}
         />
-        <button className="todoButton">Add todo</button>
+        <button className="todoButton">Add</button>
       </div>
     </form>
   );

@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   --darkblue: #012f47;
@@ -53,7 +54,7 @@ h1 {
 
 .todoText {
   padding: 18px;
-  border-radius: 4px 0 0 4px;
+  border-radius: 5px 0 0 5px;
   border: 2px solid var(--lightblue);
   outline: none;
   width: 320px;
@@ -68,14 +69,16 @@ h1 {
 }
 
 .todoButton {
-  padding: 22px 0 21px 0;
-  border: none;
+  padding: 18px;
+  border: 2px solid var(--lightblue);
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   outline: none;
   background: var(--lightblue);
   color: white;
   width: 91px;
+  /* height: 35px; */
+  font-size: 16px;
 }
 
 .todoText.edit {
@@ -84,6 +87,7 @@ h1 {
 
 .todoButton.edit {
   background: var(--orange);
+  border: 2px solid var(--orange);
 }
 
 .todoContainer {
